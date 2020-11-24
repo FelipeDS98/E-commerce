@@ -1,0 +1,21 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content%}
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{{product.imageURL}}" style="background-color: #D4DAD1;
+             padding-bottom: 20px;" alt="">
+            <div class="box-element product" style="padding-top: 10px;">
+                <h6><strong style="font-size: 130%;">{{product.name}}</strong></h6>
+                <hr>
+                <button data-product={{product.id}} data-action="add" class="btn btn-dark add-btn update-cart">Agregar al carrito</button>
+                <a class="btn btn-info" href="#">Ver</a>
+                <h4 style="display: inline-block; float: right;">
+                    <strong>${{product.price|floatformat:0}}</strong>
+                </h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content%}

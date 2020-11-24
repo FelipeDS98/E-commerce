@@ -1,9 +1,10 @@
 body{
-	background-color: #FCFEF7;
+	background-color: #F8F9FA;
+	background-color: #BCB8B8;
 }
 
 #Widgets{
-	background-color: #F8F9FA;
+	background-color: #BCB8B8;
 	font-family: sans-serif;
 	border: 0px;
 }
@@ -13,7 +14,7 @@ body{
 	font-family: sans-serif;
 	font-weight: 600; 
 	color:#212544;
-	border: 3px solid darkolivegreen;  
+	border: 3px solid rgb(112, 122, 94);  
 	margin-bottom: 20px;
 	padding: 10px;
 }
