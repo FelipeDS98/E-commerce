@@ -14,23 +14,11 @@
           <a class="nav-link"  style="color: white;" href="{% url 'home' %}">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item mx-3">
-          <a class="nav-link" style="color: white;" href="#">Cuenta</a>
-        </li>
-        <li class="nav-item dropdown mx-3">
-          <a class="nav-link dropdown-toggle" style="color: white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Instrumentos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Guitarras</a>
-            <a class="dropdown-item" href="#">Bajos</a>
-            <a class="dropdown-item" href="#">Baterías</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Accesorios</a>
-          </div>
+          <a class="nav-link" style="color: white;" href="admin/accounts/order">Cuenta</a>
         </li>
       </ul>
         <div class="form-inline my-2 my-lg-0">
-          <a href="#" class="btn btn-warning">Acceder</a>
+          <img src="{% static 'images/logo3.png' %}" alt="" style="height: 30%; width: 30%;">
           <a href="{% url 'cart' %}">
             <img id="cart-icon" src="{% static 'images/cart.png' %}" alt="">
           </a>
