@@ -1,0 +1,58 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+	<div class="col-lg-12">
+        <div class="box-element product" style="padding-top: 10px; background-color: #D4DAD1;">
+            <hr>
+            <strong style="font-size: 200%; color: #840000;">{{product.name}}</strong>
+            <hr>
+            <p><strong style="color: #840000;">PRECIO: </strong>${{product.price}}</p>
+            <hr>
+            <table>
+                <tr>
+                    <th><img id="featured" src="{{ product.image2.url }}" alt=""></th>
+                    <th><p style="margin-left: 10px;">{{product.desc}}</p></th>
+                </tr>
+            </table>
+            <hr>
+            <table class="table">
+                <tr>
+                    <th><img class="thumbnail active" src="{{ product.image2.url }}" alt=""></th>
+                    <th><img class="thumbnail" src="{{ product.image3.url }}" alt=""></th>
+                    <th><img class="thumbnail" src="{{ product.image4.url }}" alt=""></th>
+                    <th><img class="thumbnail" src="{{ product.image5.url }}" alt=""></th>
+                </tr>
+            </table>
+            <hr>
+            <div style="text-align: center;">
+                <a class="btn btn-dark" href="{% url 'home' %}" style="margin-right: 20px;">&#x2190; Volver</a>
+                <button data-product={{product.id}} data-action="add" class="btn btn-success add-btn update-cart">Agregar al carrito</button>
+            </div>
+		</div>
+    </div>
+</div>
+
+<script type="text/javascript" >
+    let thumbnails = document.getElementsByClassName('thumbnail');
+    let activeImages = document.getElementsByClassName('active');
+
+    for (var i=0; i < thumbnails.length; i++){
+
+        thumbnails[i].addEventListener('mouseover', function(){
+
+            if (activeImages.length > 0){
+                activeImages[0].classList.remove('active')
+            }
+
+            this.classList.add('active')
+            document.getElementById('featured').src = this.src
+        })
+    }
+
+</script>
+    
+{% endblock %}

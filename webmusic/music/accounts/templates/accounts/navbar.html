@@ -16,9 +16,12 @@
         <li class="nav-item mx-3">
           <a class="nav-link" style="color: white;" href="admin/accounts/order">Cuenta</a>
         </li>
+        <li class="nav-item mx-3">
+          <a class="nav-link" style="color: white;" href="{% url 'credits' %}">Créditos</a>
+        </li>
       </ul>
         <div class="form-inline my-2 my-lg-0">
-          <img src="{% static 'images/logo3.png' %}" alt="" style="height: 30%; width: 30%;">
+  
           <a href="{% url 'cart' %}">
             <img id="cart-icon" src="{% static 'images/cart.png' %}" alt="">
           </a>

@@ -90,3 +90,19 @@ def processOrder(request):
 
     return JsonResponse('Payment Completed!', safe=False)
 
+def credits(request):
+    data = cartData(request)
+    cartItems = data['cartItems']
+    products = Product.objects.all()
+
+    context = {'product': product, 'products': products, 'cartItems': cartItems}
+    return render(request, 'accounts/credits.html', context)
+
+def product(request, pk):
+    product = Product.objects.get(id=pk)
+    data = cartData(request)
+    cartItems = data['cartItems']
+    products = Product.objects.all()
+
+    context = {'product': product, 'products': products, 'cartItems': cartItems}
+    return render(request, "accounts/product.html", context)
